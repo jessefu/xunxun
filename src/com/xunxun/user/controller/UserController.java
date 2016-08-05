@@ -73,11 +73,10 @@ public class UserController {
 	 
 	@RequestMapping("/login")
 	public String Login(User user, HttpServletRequest request){
-		System.out.println(""+user.getName());
 		logger.info(""+user.getName() + "=="+user.getPassword());
 		if(userManager.login(user) == true){
 			request.setAttribute("user", userManager.getUserByName(user.getName()));
-			return "/editUser";
+			return "/useradmin/userinfo";
 		}
 		return "/error";
 	}

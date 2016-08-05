@@ -13,6 +13,8 @@ public class LoginController {
 	
 	static User getLoginUser(HttpServletRequest request){
 		String name = (String)request.getSession().getAttribute(Const.LOGIN_SESSION_USERNAME_KEY);
+		if(name == null || name =="")
+			return null;
 		return userManager.getUserByName(name);
 		//return null;
 	}

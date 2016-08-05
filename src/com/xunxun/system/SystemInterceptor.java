@@ -14,7 +14,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import com.xunxun.user.entity.User;
 
 public class SystemInterceptor extends HandlerInterceptorAdapter {
-	private static final String[] IGNORE_URI = {"/login.jsp", "/Login/","backui/","frontui/"};
+	private static final String[] IGNORE_URI = {"login.jsp", "/login","backui/","frontui/","statics/"};
 	 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -31,6 +31,7 @@ public class SystemInterceptor extends HandlerInterceptorAdapter {
             User user = LoginController.getLoginUser(request);
             if (user != null) flag = true;
         }
+        System.out.println("flag>>>: " + flag);
         return flag;
     }
  
