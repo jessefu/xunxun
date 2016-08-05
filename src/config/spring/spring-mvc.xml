@@ -24,4 +24,10 @@
             <property name="prefix" value="/"></property>  
             <property name="suffix" value=".jsp"></property>  
         </bean>  
+       <mvc:interceptors>
+        	<mvc:interceptor>
+            	<mvc:mapping path="/**"/>
+            	<bean id="loginInterceptor" class="com.xunxun.system.SystemInterceptor"/>
+        	</mvc:interceptor>
+    	</mvc:interceptors>
     </beans>  

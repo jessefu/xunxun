@@ -38,18 +38,24 @@ public class UserManagerImpl implements UserManager{
 	@Override
 	public boolean delUser(String id) {
 		// TODO Auto-generated method stub
+		if(id == null || id=="")
+			return false;
 		return mUserDao.delUser(id);
 	}
 	
 	@Override
 	public boolean updateUser(User user) {
 		// TODO Auto-generated method stub
+		if(user ==null)
+			return false;
 		return mUserDao.updateUser(user);
 	}
 	
 	@Override
 	public User getUserByName(String name) {
 		// TODO Auto-generated method stub
+		if(name ==null || name =="")
+			return null;
 		return mUserDao.getUserByName(name);
 	}
 	
